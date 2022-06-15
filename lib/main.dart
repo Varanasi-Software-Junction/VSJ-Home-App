@@ -8,12 +8,13 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
-//import 'package:path_provider/path_provider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-void main() => runApp(const MaterialApp(home: WebViewExample()));
+void main() {
+
+      runApp(const MaterialApp(home: VSJSite()));
+}
 
 const String kNavigationExamplePage = '''
 <!DOCTYPE html><html>
@@ -70,16 +71,16 @@ const String kTransparentBackgroundPage = '''
   </html>
 ''';
 
-class WebViewExample extends StatefulWidget {
-  const WebViewExample({Key? key, this.cookieManager}) : super(key: key);
+class VSJSite extends StatefulWidget {
+  const VSJSite({Key? key, this.cookieManager}) : super(key: key);
 
   final CookieManager? cookieManager;
 
   @override
-  State<WebViewExample> createState() => _WebViewExampleState();
+  State<VSJSite> createState() => _VSJSiteState();
 }
 
-class _WebViewExampleState extends State<WebViewExample> {
+class _VSJSiteState extends State<VSJSite> {
   final Completer<WebViewController> _controller =
       Completer<WebViewController>();
 
@@ -94,8 +95,9 @@ class _WebViewExampleState extends State<WebViewExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.teal,
       appBar: AppBar(
+        backgroundColor: Colors.teal,
         title: const Text('Varanasi Software Junction'),
         // This drop down menu demonstrates that Flutter widgets can be shown over the web view.
         actions: <Widget>[
@@ -217,7 +219,7 @@ class SampleMenu extends StatelessWidget {
     // Send a message with the user agent string to the Toaster JavaScript channel we registered
     // with the WebView.
     await controller.runJavascript(
-        'Toaster.postMessage("User Agent: " + navigator.userAgent);');
+        'Toaster.postMessage("Varanasi Software Junction');
   }
 
   Future<void> _onListCookies(
