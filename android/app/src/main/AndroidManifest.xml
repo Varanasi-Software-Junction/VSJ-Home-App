@@ -2,7 +2,7 @@
     package="com.blogspot.varanasisoftwarejunction.vsjhomeapp.vsjhomeapp">
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
    <application
-        android:label="vsjhomeapp"
+        android:label="Varanasi Software Junction"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
