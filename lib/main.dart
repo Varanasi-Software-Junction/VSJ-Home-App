@@ -12,8 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 void main() {
-
-      runApp(const MaterialApp(home: VSJSite()));
+  runApp(const MaterialApp(home: VSJSite()));
 }
 
 const String kNavigationExamplePage = '''
@@ -155,7 +154,6 @@ class _VSJSiteState extends State<VSJSite> {
         builder: (BuildContext context,
             AsyncSnapshot<WebViewController> controller) {
           return FloatingActionButton(
-
             onPressed: () async {
               String? url;
               if (controller.hasData) {
@@ -220,8 +218,15 @@ class SampleMenu extends StatelessWidget {
       WebViewController controller, BuildContext context) async {
     // Send a message with the user agent string to the Toaster JavaScript channel we registered
     // with the WebView.
-    await controller.runJavascript(
-        'Toaster.postMessage("Varanasi Software Junction');
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          const Text('Varanasi Software Junction'),
+        ],
+      ),
+    ));
   }
 
   Future<void> _onListCookies(
