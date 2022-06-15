@@ -95,6 +95,7 @@ class _VSJSiteState extends State<VSJSite> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
       backgroundColor: Colors.teal,
       appBar: AppBar(
         backgroundColor: Colors.teal,
@@ -154,6 +155,7 @@ class _VSJSiteState extends State<VSJSite> {
         builder: (BuildContext context,
             AsyncSnapshot<WebViewController> controller) {
           return FloatingActionButton(
+
             onPressed: () async {
               String? url;
               if (controller.hasData) {
